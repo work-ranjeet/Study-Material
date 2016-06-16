@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{41CE93DC-44CC-4551-B928-06AA098677ED}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CSharp</RootNamespace>
+    <AssemblyName>CSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSharp\2.O\AnonymousAndDelegate.cs" />
+    <Compile Include="CSharp\2.O\AnonymousMethod.cs" />
+    <Compile Include="CSharp\2.O\Delegate.cs" />
+    <Compile Include="CSharp\2.O\Generics.cs" />
+    <Compile Include="CSharp\2.O\Iterators.cs" />
+    <Compile Include="CSharp\3.O\AnonymousTypes.cs" />
+    <Compile Include="CSharp\3.O\AutoImplementedProperties.cs" />
+    <Compile Include="CSharp\3.O\Definition.cs" />
+    <Compile Include="CSharp\3.O\ExtentioinMethods.cs" />
+    <Compile Include="CSharp\3.O\LambdaExpression.cs" />
+    <Compile Include="CSharp\3.O\ObjectAndCollectionInitializers.cs" />
+    <Compile Include="CSharp\3.O\PartialMethods.cs" />
+    <Compile Include="CSharp\3.O\QueryExpressions.cs" />
+    <Compile Include="CSharp\4.O\DynamicBinding.cs" />
+    <Compile Include="CSharp\ConcurrentCollection.cs" />
+    <Compile Include="DesignePattern\Creational\Builder Pattern.cs" />
+    <Compile Include="DesignePattern\Creational\FactoryPattern.cs" />
+    <Compile Include="DesignePattern\Creational\PrototypePattern.cs" />
+    <Compile Include="DesignePattern\Creational\Singleton.cs" />
+    <Compile Include="DesignePattern\Structural\AdapterPattern.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CSharp\5.O\" />
+    <Folder Include="DesignePattern\Behavior\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
