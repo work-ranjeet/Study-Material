@@ -1,0 +1,761 @@
+Encapsulation:
+Encapsulation is a process of hiding all the internal details of an object from the outside world.
+Encapsulation is the ability to hide its data and methods from outside the world and only expose data and methods that are required.
+Encapsulation makes implementation inaccessible to other parts of the program and protect from whatever actions might be taken outside 
+the function or class.
+Encapsulation is the process of making the fields in a class using private methods and providing access to the fields using public methods
+
+Example:
+
+class Employee
+{
+    private int_employeeid;
+    private double_salary;
+
+    public int employeeid(int empid)
+    {
+        set{_employeeid=empid;}
+        get{return _employeeid;}
+    }
+
+    public double salary(double salary)
+    {
+        set{_salary =salary;}
+        get{return _salary;}
+    }
+}
+Abstraction refers to the act of representing essential features without including the background details or explanations.
+Encapsulation is the procedure of covering up of data and functions into a single unit (called class).
+
+public class School
+{
+	private string Schooldepartname;
+	public string SchoolDepartname
+	{
+		get
+		{
+			return Schooldepartname;
+		}
+		set
+		{
+			Schooldepartname =value;
+		}
+	}
+}
+public class Departmentmain
+{
+	public static int Main(string[] args)
+	{
+		School d= new School();
+		d.SchoolDepartname="Communication";
+		Console.WriteLine("The Department is :{0}",d.SchoolDepartname);
+		return 0;
+	}
+}
+Output:
+The Department is : Communication
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+Abstraction :
+Abstraction refers to the act of representing essential features without including the background details or explanations.
+Abstraction defines way to abstract or hide your data and members from outside world.
+Classes use the concept of abstraction and are defined as a list of abstract attributes.
+Simply speaking Abstraction is hiding the complexities of your class or struct or in a generic term Type from outer world.
+This is achieved by means of access specifiers.
+Access Modifier	Description (who can access)
+Private	  Only members within the same type.  (default for type members)
+Protected Only derived types or members of the same type.
+Internal  Only code within the same assembly. Can also be code external to object as long as it is in the same assembly.  (default for types)
+Protected internal	 Either code from derived type or code in the same assembly. Combination of protected OR internal.
+Public	 Any code. No inheritance, external type, or external assembly restrictions.
+Code Example :
+
+namespace AbstractionExample
+{
+public abstract class Shape
+        {
+            private float _area;
+            private float _perimeter;
+
+            public float Area
+            {
+                get
+                {
+                    return _area;
+                }
+                set
+                {
+                    _area = value;
+                }
+            }
+            public float Perimeter
+            {
+                get
+                {
+                    return _perimeter;
+                }
+                set
+                {
+                    _perimeter = value;
+                }
+            }
+            public abstract void CalculateArea();
+            public abstract void CalculatePerimeter();
+        }
+}
+
+Advantages of abstraction are the hiding of implementation details, component reuse, extensibility, and testability. 
+When we hide implementation details, we reveal a cleaner, more comprehensible and usable interface to our users. 
+We are separating our interface from our implementation, and this makes component reuse more practical.
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+Abstract Class:
+An abstract class cannot be instantiated. 
+The purpose of an abstract class is to provide a common definition of a base class that multiple derived classes can share. 
+For example, a class library may define an abstract class that is used as a parameter to many of its functions, and require programmers 
+using that library to provide their own implementation of the class by creating a derived class.
+Abstract classes may also define abstract methods. 
+This is accomplished by adding the keyword abstract before the return type of the method. 
+When a class contains at least one abstract method, then the class must be declared as abstract class. 
+It is mandatory to override abstract method in the derived class.
+When a class is declared as abstract class, then it is not possible to create an instance for that class. 
+But it can be used as a parameter in a method.
+For example:
+
+public abstract class A
+{
+public abstract void DoWork(int i);
+}
+
+Abstract methods have no implementation, so the method definition is followed by a semicolon instead of a normal method block. 
+Derived classes of the abstract class must implement all abstract methods. 
+When an abstract class inherits a virtual method from a base class, the abstract class can override the virtual method with an abstract method. 
+For example:
+
+public class D
+{
+public virtual void DoWork(int i)
+{
+// Original implementation.
+}
+}
+
+public abstract class E : D
+{
+public abstract override void DoWork(int i);
+}
+
+public class F : E
+{
+public override void DoWork(int i)
+{
+// New implementation.
+}
+}
+
+Difference Between Abstract Class & Interface
+An abstract class may contain complete or incomplete methods. 
+Interfaces can contain only the signature of a method but no body. 
+Thus an abstract class can implement methods but an interface cannot implement methods. 
+An abstract class can contain fields, constructors, or destructors and implement properties. 
+An interface cannot contain fields, constructors, or destructors and it has only the property''s signature but no implementation. 
+
+Please find the differences between abstract class and interface below: 
+
+An abstract class cannot support multiple inheritance, but an interface can support multiple inheritance.
+Thus a class may inherit several interfaces but only one abstract class. 
+A class implementing an interface has to implement all the methods of the interface, but the same is not required in the case of an abstract Class. 
+Various access modifiers such as abstract, protected, internal, public, virtual, etc. are useful in abstract Classes but not in interfaces. 
+Abstract classes are faster than interfaces.
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Difference between Encapsulation and Abstraction
+
+1. Abstraction solves the problem in the design level	
+1. Encapsulation solves the problem in the implementation level
+2. Abstraction is used for hiding the unwanted data and giving relevant data	
+2. Encapsulation means hiding the code and data in to a single unit to protect the data from outside world
+3. Abstraction is a technique that helps to identify which specific information should be visible and which information should be hidden.	
+3. Encapsulation is the technique for packaging the information in such a way as to hide what should be hidden, 
+   and make visible what is intended to be visible.
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Polymorphism:
+Polymorphism means same operation may behave differently on different classes.
+Example of Compile Time Polymorphism: Method Overloading
+Example of Run Time Polymorphism: Method Overriding
+Example of Compile Time Polymorphism
+
+Method Overloading
+- Method with same name but with different arguments is called method overloading.
+- Method Overloading forms compile-time polymorphism.
+- Example of Method Overloading:
+class A1
+{
+void hello()
+{ Console.WriteLine(“Hello”); }
+
+void hello(string s)
+{ Console.WriteLine(“Hello {0}”,s); }
+}
+
+
+Example of Run Time Polymorphism
+
+Method Overriding
+- Method overriding occurs when child class declares a method that has the same type arguments as a method declared by one of its superclass.
+- Method overriding forms Run-time polymorphism.
+- Note: By default functions are not virtual in C# and so you need to write “virtual” explicitly. While by default in Java each function are virtual.
+- Example of Method Overriding:
+Class parent
+{
+virtual void hello()
+{ Console.WriteLine(“Hello from Parent”); }
+}
+
+Class child : parent
+{
+override void hello()
+{ Console.WriteLine(“Hello from Child”); }
+}
+
+static void main()
+{
+parent objParent = new child();
+objParent.hello();
+}
+//Output
+Hello from Child.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Inheritance:
+Creating a new class from existing class is called as inheritance.
+Main advantage of inheritance is reusability of the code.
+Inheritance enables you to create new classes that reuse, extend, and modify the behavior that is defined in other classes.
+The Class whose methods and variables are defined is called super class or base class.
+The Class that inherits methods and variables are defined is called sub class or derived class.
+Sometimes base class known as generalized class and derived class known as specialized class.
+Keyword to declare inheritance is ":" (colon) in visual C#.
+An interface looks like a class, but has no implementation. 
+It contains definitions of events, indexers, methods and properties. 
+An interface can only be inherited by classes.
+An interface inheritance defined with keyword "interface". 
+In C# Interface Inheritance also known as multiple inheritances.
+
+Example:
+using System;
+
+namespace ProgramCall
+{
+    class Base
+    {
+        int A, B;
+
+        public void GetAB()
+        {
+            Console.Write("Enter Value For A : "); 
+            A = int.Parse(Console.ReadLine());
+            Console.Write("Enter Value For B : "); 
+            B = int.Parse(Console.ReadLine());
+        }
+
+        public void PrintAB()
+        {
+            Console.Write("A  =  {0}\tB  =  {1}\t", A, B);
+        }
+    }
+    class Derived : Base
+    {
+        int C;
+        public void Get()
+        {
+            //Accessing base class method in derived class
+            GetAB();
+
+            Console.Write("Enter Value For C : "); 
+            C = int.Parse(Console.ReadLine());
+        }
+
+        public void Print()
+        {
+
+            //Accessing base class method in derived class
+            PrintAB();
+
+            Console.WriteLine("C  =  {0}", C);
+
+        }
+    }
+
+    class MainClass
+    {
+
+        static void Main(string[] args)
+        {
+
+            Derived obj = new Derived();
+            obj.Get();
+            obj.Print();
+
+            //Accessing base class method with derived class instance
+            obj.PrintAB();
+            
+            Console.Read();
+        }
+    }
+}
+
+Output
+
+Enter Value For A : 77
+Enter Value For B : 88
+Enter Value For C : 99
+A  =  77        B  =  88        C  =  99
+A  =  77        B  =  88
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+Virtual Method
+When you want to allow a derived class to override a method of the base class, within the base class.
+Then method must be created as virtual method and 
+within the derived class method must be created using the keyword override.
+
+Example:
+using System;
+
+namespace ProgramCall
+{
+    class Shape
+    {
+        protected float R, L, B;
+        public virtual float Area()
+        {
+            return 3.14F * R * R;
+        }
+        public virtual float Circumference()
+        {
+            return 2 * 3.14F * R;
+        }
+    }
+
+    class Rectangle : Shape
+    {
+        public void GetLB()
+        {
+            Console.Write("Enter  Length  :  ");
+            L = float.Parse(Console.ReadLine()); 
+            Console.Write("Enter Breadth : ");
+            B = float.Parse(Console.ReadLine());
+        }
+        public override float Area()
+        {
+            return L * B;
+        }
+        public override float Circumference()
+        {
+            return 2 * (L + B);
+        }
+    }
+
+    class Circle : Shape
+    {
+        public void GetRadius()
+        {
+            Console.Write("Enter  Radius  :  ");
+
+            R = float.Parse(Console.ReadLine());
+        }
+    }
+
+    class MainClass
+    {
+        static void Main()
+        {
+            Rectangle R = new Rectangle();
+            R.GetLB();
+            Console.WriteLine("Area : {0}", R.Area()); 
+            Console.WriteLine("Circumference : {0}", R.Circumference());
+            Console.WriteLine();
+            Circle C = new Circle(); 
+            C.GetRadius();
+            Console.WriteLine("Area : {0}", C.Area());
+            Console.WriteLine("Circumference : {0}", C.Circumference());
+            Console.Read();
+        }
+    }
+}
+Output
+
+Enter  Length  :  10
+Enter Breadth : 20
+Area : 200
+Circumference : 60
+
+Enter  Radius  :  25
+Area : 1962.5
+Circumference : 157
+---------------------------------------------------------------------------------------------------------------------------------------------------
+Sealed class & Sealed Method 
+
+Sealed Class
+When you want to restrict your classes from being inherited by others you can create the class as sealed class.
+To create a class as sealed class, create the class using the keyword sealed.
+
+private sealed class classname
+{
+}
+
+Sealed Methods
+The virtual nature of a method persists for any number of levels of inheritance.
+For example there is a class “A” that contains a virtual method “M1”. 
+Another class “B” is inherited from “A” and another class “C” is inherited from “B”. 
+In this situation class “C” can override the method “M1” regardless of whether class “B” overrides the method “M1”. 
+At any level of inheritance, if you want to restrict next level of derived classes from overriding a virtual method, 
+then create the method using the keyword sealed along with the keyword override.
+
+private sealed override returntype methodname([Params])
+{
+}
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Access modifiers:
+Access modifiers are keywords used to specify the declared accessibility of a member or a type. 
+This section introduces the four access modifiers:
+public (No restrictions to access).
+protected (Access is limited to within the class definition and any class that inherits from the class).
+internal (Access is limited exclusively to classes defined within the current project assembly).
+private (Access is limited to within the class definition; This is the default access modifier type if none is formally specified).
+
+public
+This makes the member visible globally
+Eg. class Gremlin { public Gremlin spawn() { return new Gremlin(); } } 
+
+protected
+This makes the member visible to the current class and to child classes.  
+Protected members are only accessible in the same class or through inherited classes.
+Eg. class ParentClass { protected int valueA; }
+class ChildClass { public void doSomething() { valueA = 3; } }
+
+private
+This makes the member visible only to the current class.
+Eg. class MyCollection { private int lastIndex; }
+
+internal / Friend
+This makes the member visible within the same assembly.
+Eg. internal class ProprietaryStuff { } 
+
+protected internal / Protected Friend
+A combination of protected and internal.  
+This makes the member visible within the same assembly and also makes the member visible to an inheriting class. 
+An inheriting class does not need to be in the same assembly to access the member.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Static Class & Static Member
+A class can be declared static, indicating that it contains only static members. 
+It is not possible to create instances of a static class using the new keyword. 
+Static classes are loaded automatically by the .NET Framework common language runtime (CLR) 
+when the program or namespace containing the class is loaded.
+
+Example:
+static class CompanyInfo
+{
+    public static string GetCompanyName() { return "CompanyName"; }
+    public static string GetCompanyAddress() { return "CompanyAddress"; }
+    //...
+}
+
+Static Member:
+Static class members are declared using the static keyword before the return type of the member.
+
+Example:
+public class Automobile
+{
+    public static int NumberOfWheels = 4;
+    public static int SizeOfGasTank
+    {
+        get
+        {
+            return 15;
+        }
+    }
+    public static void Drive() { }
+    public static event EventType RunOutOfGas;
+    //other non-static fields and properties...
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------
+WCF:
+Windows Communication Foundation (WCF) is a framework for building service-oriented applications. 
+Using WCF we can build secure, reliable, transacted solutions that integrate across platforms.
+WCF is a unified framework which provides :
+
+1. NET Remoting 
+2.Distributed Transactions 
+3.Message Queues and 
+4.Web Services into a single service-oriented programming model for distributed computing.
+
+WCF interoperate between WCF-based applications and any other processes that communicate via SOAP (Simple Object Access Protocol) messages.
+
+Features of WCF
+Service Orientation,
+Interoperability,
+Security,
+Transactions,
+Extensibility
+
+A WCF service is exposed to the outside world as a collection of endpoints.
+Endpoint: Endpoint is a construct at which messages are sent or received (or both). Endpoint comprises of ABC’s       
+What are ABC’s of WCF ? 
+A. Address (Where to Sent)- Address is a location that defines where messages can be sent
+B. Binding (How to Sent)-   Binding is a specification of the communication mechanism (a binding) that described how messages should be sent
+C. Contract (What to Sent)- Contract is a definition for a set of messages that can be sent or received (or both) 
+                            at that location (a service contract) that describes what message can be sent.
+2. Service:(Opearting Services) A construct that exposes one or more endpoints, with each endpoint exposing one or more service operations.
+3. Contracts: A contract is a agreement between two or more parties for common understanding and 
+              it is a is a platform-neutral and standard way of describing what the service does. 
+			  In WCF, all services expose contracts.
+
+Types of Contracts:
+1) Operation Contract: An operation contract defines the parameters and return type of an operation.
+
+[OperationContract]
+double Add(double i, double j);
+
+2) Service Contract: Ties together multiple related operations contracts into a single functional unit.
+
+[ServiceContract] //System.ServiceModel
+public interface IMath
+{
+    [OperationContract]
+    double Add(double i, double j);
+    [OperationContract]
+    double Sub(double i, double j);
+    [OperationContract]
+    Complex AddComplexNo(Complex i, Complex j);
+    [OperationContract]
+    Complex SubComplexNo(Complex i, Complex j);
+}
+
+3) Data Contract: The descriptions in metadata of the data types that a service uses.
+
+// Use a data contract
+[DataContract] //using System.Runtime.Serialization
+public class Complex
+{
+    private int real;
+    private int imaginary;
+
+    [DataMember]
+    public int Real { get; set; }
+    [DataMember]
+    public int Imaginary { get; set; }
+}
+WCF is interoperable with other services when compared to .Net Remoting,where the client and service have to be .Net.
+WCF services provide better reliability and security in compared to ASMX web services.
+In WCF, there is no need to make much change in code for implementing the security model and changing the binding. 
+Small changes in the configuration will make your requirements.
+WCF has integrated logging mechanism, changing the configuration file settings will provide this functionality. 
+In other technology developer has to write the code.
+Using WCF, you can send data as asynchronous messages from one service endpoint to another.
+
+Web Services
+A Web Service is programmable application logic accessible via standard Web protocols. 
+One of these Web protocols is the Simple Object Access Protocol (SOAP)
+
+In what scenarios must WCF be used?
+
+A secure service to process business transactions.
+A service that supplies current data to others, such as a traffic report or other monitoring service.
+A chat service that allows two people to communicate or exchange data in real time.
+A dashboard application that polls one or more services for data and presents it in a logical presentation.
+Exposing a workflow implemented using Windows Workflow Foundation as a WCF service.
+A Silverlight application to poll a service for the latest data feeds.
+
+
+Difference between Web Services & WCF
+Web Services can be accessed only over HTTP & it works in stateless environment, 
+where WCF is flexible because its services can be hosted in different types of applications. 
+Common scenarios for hosting WCF services are IIS,WAS, Self-hosting, Managed Windows Service.
+
+The major difference is that Web Services Use XmlSerializer.But WCF Uses DataContractSerializer 
+which is better in Performance as compared to XmlSerializer.
+
+XML Serialization does not indicate which fields or properties of the type are serialized into XML whereas DataCotractSerializer do.
+The DataContractSerializer can translate the HashTable into XML
+
+What is Silverlight?
+Silverlight is a new cross-browser, cross-platform implementation of the .NET Framework for building and delivering the 
+Rich Interactive Applications(RIA) for the web. It runs in all popular browsers, including Microsoft Internet Explorer, Mozilla Firefox, 
+Apple Safari, Opera. The plugin required to run Silverlight is very small in size hence gets installed very quickly.
+
+What is CLR?
+The Common Language Runtime (CLR) is the component of Microsoft's .NET framework and is responsible for managing the execution of .NET programs. 
+In a process known as Just-in-time compilation, the compiled code is converted into machine instructions that, in turn, 
+are executed by the computer's CPU. The CLR provides additional services including memory management, type safety and exception handling. 
+All programs written for the .NET framework, regardless of programming language, are executed by the CLR. 
+It provides exception handling, garbage collection and thread management. CLR is common for all the version of the .NET framework.
+
+What is Global.asa file ?
+
+The Global.asa file is an optional file that can contain declarations of objects, variables and methods that can be accessed by every page in ASP.net
+application.
+All valid browser scripts (JavaScript, VBScript, JScript, PerlScript, etc.) can be used within Global.asa.
+
+The Global.asa file can contain only the following:
+Application events
+Session events
+<object> declarations
+TypeLibrary declarations
+the #include directive
+
+Note: The Global.asa file must be stored in the root directory of the ASP application, and each application can only have one Global.asa file.
+
+Events in Global.asa
+
+In Global.asa you can tell the application and session objects what to do when the application/session starts and what to do when 
+the application/session ends. The code for this is placed in event handlers. 
+The Global.asa file can contain four types of events:
+
+Application_OnStart - Occurs when the FIRST user calls the first page in an ASP application. 
+                      This event occurs after the Web server is restarted or after the Global.asa file is edited. 
+					  The "Session_OnStart" event occurs immediately after this event.
+					  
+Session_OnStart -     This event occurs EVERY time a NEW user requests his or her first page in the ASP application.
+
+Session_OnEnd -       This event occurs EVERY time a user ends a session. 
+                      A user-session ends after a page has not been requested by the user for a specified time (by default this is 20 minutes).
+
+Application_OnEnd -   This event occurs after the LAST user has ended the session. Typically, this event occurs when a Web server stops. 
+                      This procedure is used to clean up settings after the Application stops, like delete records or write information to text files.
+					  
+What is State Management in Asp.Net?
+State  Management is of 2 Types:
+Server Based State Management & Client Based State Management
+
+Client Based State Management
+View state, Control state, Hidden fields, Cookies, Query strings, 
+Server Based State Management
+Application state, Session state, Profile Properties
+
+1.	Client – Side State Management 
+This stores information on the client's computer by embedding the information into a Web page, a uniform resource locator(url), or a cookie. 
+The techniques available to store the state information at the client end are listed down below: 
+
+a.	View State – Asp.Net uses View State to track the values in the Controls. You can add custom values to the view state. 
+                 It is used by the Asp.net page framework to automatically save the values of the page and of each control just prior 
+				 to rendering to the page. When the page is posted, one of the first tasks performed by page processing is to restore view state. 
+
+b.	Control State – If you create a custom control that requires view state to work properly, you should use control state to ensure 
+                    other developers don’t break your control by disabling view state. 
+
+c.	Hidden fields – Like view state, hidden fields store data in an HTML form without displaying it in the user's browser. 
+                   The data is available only when the form is processed. 
+
+d.	Cookies – Cookies store a value in the user's browser that the browser sends with every page request to the same server. 
+              Cookies are the best way to store state data that must be available for multiple Web pages on a web site. 
+
+e.	Query Strings - Query strings store values in the URL that are visible to the user. 
+                    Use query strings when you want a user to be able to e-mail or instant message state data with a URL. 
+
+2.	Server – Side State Management 
+a.	Application State - Application State information is available to all pages, regardless of which user requests a page. 
+
+b.	Session State – Session State information is available to all pages opened by a user during a single visit. 
+
+Both application state and session state information is lost when the application restarts. 
+To persist user data between application restarts, you can store it using profile properties. 
+
+Page life Cylce of Asp.net(PSILPRU)
+
+PSILPRU stands for(Page Request, Start, Intialize, Load, Postback, Rendering, Unload)
+
+1. Page request
+The page request occurs before the page life cycle begins. When the page is requested by a user, 
+ASP.NET determines whether the page needs to be parsed and compiled (therefore beginning the life of a page), 
+or whether a cached version of the page can be sent in response without running the page.
+
+2. Start
+In the start stage, page properties such as Request and Response are set. At this stage, 
+the page also determines whether the request is a postback or a new request and sets the IsPostBack property. 
+The page also sets the UICulture property.
+
+3. Initialization
+During page initialization, controls on the page are available and each control's UniqueID property is set. 
+A master page and themes are also applied to the page if applicable. If the current request is a postback,
+the postback data has not yet been loaded and control property values have not been restored to the values from view state.
+
+4. Load
+During load, if the current request is a postback, control properties are loaded with information recovered from view state and control state.
+
+5. Postback event handling
+If the request is a postback, control event handlers are called. After that, the Validate method of all validator controls is called, 
+which sets the IsValid property of individual validator controls and of the page. 
+(There is an exception to this sequence: the handler for the event that caused validation is called after validation.)
+
+6. Rendering
+Before rendering, view state is saved for the page and all controls. During the rendering stage, the page calls the Render method for each control, 
+providing a text writer that writes its output to the OutputStream object of the page's Response property.
+
+7. Unload
+The Unload event is raised after the page has been fully rendered, sent to the client, and is ready to be discarded. 
+At this point, page properties such as Response and Request are unloaded and cleanup is performed.
+
+Page Directives in Asp.Net
+ASP.NET treats any directive block (<%@ %>) that does not contain an explicit directive name as an @ Page directive (for a page) or as an 
+@ Control directive (for a user control).
+
+@ Assembly :Links an assembly to the current page or user control declaratively.
+@ Control  :Defines control-specific attributes used by the ASP.NET page parser and compiler and can be included only in .ascx files (user controls).
+@ Implements :Indicates that a page or user control implements a specified .NET Framework interface declaratively.
+@ Import :Imports a namespace into a page or user control explicitly.
+@ Master :Identifies a page as a master page and defines attributes used by the ASP.NET page parser and compiler and can be included only in
+         .master files.
+@ MasterType :Defines the class or virtual path used to type the Master property of a page.
+@ OutputCache :Controls the output caching policies of a page or user control declaratively.
+@ Page :Defines page-specific attributes used by the ASP.NET page parser and compiler and can be included only in .aspx files.
+@ PreviousPageType :Creates a strongly typed reference to the source page from the target of a cross-page posting.
+@ Reference :Links a page, user control, or COM control to the current page or user control declaratively.
+@ Register :Associates aliases with namespaces and classes, which allow user controls and custom server controls to be rendered 
+            when included in a requested page or user control.
+
+Validation Control in Asp.Net
+6 Types of validation controls are  available in asp.net
+1. Custom Validator
+2. Comapre Validator
+3. Required Filed Validator
+4. Regular Expression Validator
+5. Range Validator
+6. Validation Summary
+
+SqlConnection con = new SqlConnection("Datasource="local";database=VTS;User ID = sa;Password = administrator123#;Max Pool Size = 2000;MultipleActiveResultSets=true;
+                                       Integrated security='true'");
+									   string s= "seelct * from employee";
+SqldataAdapter adap = new sqldataadapter(s,con);
+dataset ds = new dataset();
+ds= adp.fill();
+
+SDLC(RDITIM)
+RDITIM Stands for (Requirement , Design, Implementation, Testing, Installation, Maintainnece) 
+
+Boxing and unboxing
+Converting a value type to reference type is called Boxing. Unboxing is the opposite operation and is an explicit operation.
+class Test
+{
+	static void Main() {
+		int i = 1;
+		object o = i;		// boxing
+		int j = (int) o;	// unboxing
+	}
+}
+An int value can be converted to object and back again to int.
+This example shows both boxing and unboxing. When a variable of a value type needs to be converted to a reference type, 
+an object box is allocated to hold the value, and the value is copied into the box.
+Unboxing is just the opposite. When an object box is cast back to its original value type, 
+the value is copied out of the box and into the appropriate storage location.
+
+Serialization explained
+
+Serialization is the process of converting complex objects into stream of bytes for storage. 
+Deserialization is its reverse process, that is unpacking stream of bytes to their original form. 
+The namespace which is used to read and write files is System.IO. 
+For Serialization we are going to look at the System.Runtime.Serialization namespace. 
+The ISerializable interface allows you to make any class Serializable.

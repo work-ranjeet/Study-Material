@@ -1,0 +1,23 @@
+Numotion is committed to serving the lifelong needs of our customers by providing mobility solutions for individuals with complex medical mobility limitations. Our team of professionals support individuals throughout the equipment evaluation and selection processes, help with obtaining the necessary medical records and documentation, apply for insurance authorizations and coverage and filing insurance claims. We deliver equipment and provide training to individuals and their family or caregivers on how to operate. After delivery, our Service and Repair teams provide continued assistance. Each Numotion team member and each Numotion location is empowered to provide an individualized and memorable service experience for every customer.  Our success is measured by our responsiveness, timely delivery, accurately fit products, timely service, and excellent communications. 
+Customers are the caregivers and family members of our clients, their clinical teams of doctors and therapists, referral sources, health insurance companies, and other third party payers. The customers who are also the users of the health and mobility equipment we provide are termed clients.
+Client types are person, business, or facility. Client information is maintained in client profile. 
+
+
+http://www.codeproject.com/Articles/560798/ASP-NET-MVC-Controller-Dependency-Injection-for-Be
+http://tutorials.jenkov.com/dependency-injection/index.html
+
+http://www.dotnetcurry.com/showarticle.aspx?ID=786
+http://www.codeproject.com/Tips/719708/Explained-Life-Cycle-of-an-ASP-NET-Page
+http://www.codeproject.com/Articles/73728/ASP-NET-Application-and-Page-Life-Cycle
+http://www.codeproject.com/Articles/32545/Exploring-Session-in-ASP-Net
+http://msdn.microsoft.com/en-us/library/ms178472(VS.80).aspx
+http://forums.asp.net/t/1929135.aspx?Interview+questions+for+4+years+of+experience
+http://pawantechit.blogspot.in/2013/03/interview-question-for-3-6-year.html
+http://www.a2zinterviews.com/DotNet/csharp.net/
+http://www.aspdotnet-suresh.com/2010/05/interview-questions-in-aspnetcnetsql.html
+http://www.c-sharpcorner.com/UploadFile/1492b1/C-Sharp-and-Asp-Net-question-and-answersall-in-one/
+http://www.c-sharpcorner.com/UploadFile/d98ae4/top-frequently-asked-questions-in-net-interview/
+http://www.c-sharpcorner.com/UploadFile/1492b1/C-Sharp-and-Asp-Net-interview-question-and-answers/
+http://www.c-sharpcorner.com/UploadFile/81a718/top-10-Asp-Net-mvc-interview-questions-and-answers/
+
+
